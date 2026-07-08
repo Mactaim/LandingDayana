@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Innovación & Talento Humano Consultores S.A.C.</title>
+    <meta name="description" content="Consultoría de RRHH en Perú. Selección de personal por competencias, inteligencia analítica y gestión humana.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            50: '#f6f6f6',
+                            100: '#e7e7e7',
+                            500: '#6d6d6d',
+                            600: '#5d5d5d',
+                            700: '#4f4f4f',
+                            800: '#454545',
+                            900: '#3d3d3d', // Corporate Charcoal from Logo
+                        },
+                        secondary: {
+                            50: '#fff4f2',
+                            100: '#ffe6e1',
+                            500: '#f26b4d', // Brand Orange from Logo
+                            600: '#e05739',
+                            700: '#bc4529',
+                        },
+                        cream: {
+                            50: '#fcfbf9',
+                            100: '#f4f1ea', // Crema cálido basado en el logo
+                            200: '#ebe5d8',
+                            300: '#dfd5c3',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Custom Styles for specific animations and utilities */
+        .glass-nav {
+            background: rgba(244, 241, 234, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(223, 213, 195, 0.5);
+        }
+        .hero-pattern {
+            background-color: #3d3d3d;
+            background-image: radial-gradient(circle at 20% 50%, rgba(242, 107, 77, 0.15) 0%, transparent 50%),
+                              radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+        }
+        .tab-active {
+            border-bottom: 2px solid #f26b4d;
+            color: #f26b4d;
+            font-weight: 600;
+        }
+        .tab-inactive {
+            color: #64748b;
+        }
+        .tab-inactive:hover {
+            color: #334155;
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 antialiased bg-cream-100 relative">
+
+    <header class="fixed w-full top-0 z-50 glass-nav transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <img src="image_3a0c98.jpg" alt="Innovación & Talento Logo" class="h-14 w-auto mix-blend-multiply">
+                </div>
+
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex space-x-8 items-center">
+                    <a href="#empresas" class="text-gray-600 hover:text-secondary-500 font-medium transition-colors">Empresas</a>
+                    <a href="#candidatos" class="text-gray-600 hover:text-secondary-500 font-medium transition-colors">Candidatos</a>
+                    <a href="#nosotros" class="text-gray-600 hover:text-secondary-500 font-medium transition-colors">Nuestra Historia</a>
+                    <a href="#contacto" class="bg-secondary-500 hover:bg-secondary-600 text-white px-5 py-2.5 rounded-full font-medium transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+                        Contáctanos
+                    </a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+            <div class="md:hidden flex items-center">
+                <button id="mobile-menu-btn" class="text-gray-600 hover:text-secondary-500 focus:outline-none p-2">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Menu (Hidden by default) -->
+    <div id="mobile-menu" class="hidden md:hidden bg-cream-50 border-t border-cream-200 absolute w-full shadow-xl">
+        <div class="px-4 pt-2 pb-6 space-y-2">
+                <a href="#empresas" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-secondary-500 hover:bg-secondary-50">Empresas</a>
+                <a href="#candidatos" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-secondary-500 hover:bg-secondary-50">Candidatos</a>
+                <a href="#nosotros" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-secondary-500 hover:bg-secondary-50">Nuestra Historia</a>
+                <a href="#contacto" class="block px-3 py-3 mt-4 text-center rounded-md text-base font-medium bg-secondary-500 text-white hover:bg-secondary-600">Contáctanos</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="pt-32 pb-20 md:pt-40 md:pb-28 hero-pattern text-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-4xl mx-auto">
+                <span class="inline-block py-1 px-3 rounded-full bg-white/10 border border-white/20 text-gray-200 text-sm font-semibold tracking-wide mb-6 backdrop-blur-sm">
+                    Reclutamiento B2B & B2C
+                </span>
+                
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
+                    Potenciamos tu empresa con los colaboradores más capacitados en <span class="text-secondary-500">habilidades y valores</span>
+                </h1>
+                
+                <p class="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed max-w-3xl mx-auto font-light">
+                    Soluciones integrales en gestión humana mediante inteligencia analítica y metodologías basadas en competencias para un crecimiento sostenible.
+                </p>
+
+                <!-- USP Callout -->
+                <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 mb-10 text-left md:text-center shadow-2xl mx-auto max-w-4xl">
+                    <div class="flex items-start md:items-center justify-center gap-4">
+                        <div class="bg-secondary-500 p-3 rounded-full text-white shrink-0">
+                            <i class="fas fa-brain text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-1">Nuestra Propuesta de Valor</h3>
+                            <p class="text-gray-100 text-sm md:text-base">
+                                Procesos de selección <strong class="text-white">objetivos, eficientes y humanizados</strong> gracias a herramientas psicométricas, proyectivas e inteligencia analítica.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Dual Action Buttons -->
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#empresas" class="bg-secondary-500 text-white hover:bg-secondary-600 px-8 py-4 rounded-full font-bold text-lg transition-all shadow-[0_0_20px_rgba(242,107,77,0.3)] hover:shadow-[0_0_25px_rgba(242,107,77,0.5)] transform hover:-translate-y-1 flex items-center justify-center gap-2">
+                        <i class="fas fa-building"></i> Soy Empresa
+                    </a>
+                    <a href="#candidatos" class="bg-transparent border-2 border-white text-white hover:bg-white/10 px-8 py-4 rounded-full font-bold text-lg transition-all transform hover:-translate-y-1 flex items-center justify-center gap-2">
+                        <i class="fas fa-user-tie"></i> Busco Empleo
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Decorative bottom divider -->
+        <div class="absolute bottom-0 left-0 right-0 w-full overflow-hidden leading-none z-0">
+            <svg class="relative block w-full h-[50px] md:h-[100px]" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C59.71,118,130.9,130.2,204.6,119.53,246.3,113.51,283.6,92.1,321.39,56.44Z" fill="#f4f1ea"></path>
+            </svg>
+        </div>
+    </section>
+
+    <section class="py-20 bg-cream-100" id="servicios">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Soluciones a medida para cada necesidad</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Conectamos el talento excepcional con organizaciones visionarias, asegurando el 'match' perfecto para ambas partes.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 lg:gap-12">
+            
+            <!-- B2B: Para Empresas -->
+            <div id="empresas" class="bg-cream-50 rounded-3xl p-8 shadow-xl border border-cream-200 hover:shadow-2xl transition-shadow relative overflow-hidden group">
+                <div class="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-primary-100 rounded-full opacity-50 group-hover:scale-150 transition-transform duration-500"></div>
+                    
+                    <div class="relative z-10">
+                        <div class="w-16 h-16 bg-primary-600 rounded-2xl flex items-center justify-center text-white text-2xl mb-6 shadow-lg">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Para Empresas</h3>
+                        <p class="text-gray-600 mb-6 h-24">Encontramos el talento estratégico que tu organización necesita. Vendemos <strong>velocidad, acierto y sostenibilidad</strong> organizacional.</p>
+                        
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-start gap-3">
+                                <i class="fas fa-check-circle text-secondary-500 mt-1"></i>
+                                <span class="text-gray-700">Metodología de <strong>excelencia profesional e imparcialidad</strong>.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fas fa-check-circle text-secondary-500 mt-1"></i>
+                                <span class="text-gray-700">Enfoque en <strong>sectores estratégicos</strong> del mercado peruano.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fas fa-check-circle text-secondary-500 mt-1"></i>
+                                <span class="text-gray-700">Optimización de procesos organizacionales.</span>
+                            </li>
+                        </ul>
+                        
+                        <a href="javascript:void(0)" onclick="openTab('empresa')" class="block w-full text-center bg-primary-50 text-primary-700 hover:bg-primary-600 hover:text-white font-semibold py-3 px-6 rounded-xl transition-colors border border-primary-100 hover:border-transparent">
+                            Solicitar Consultoría <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- B2C: Para Candidatos -->
+            <div id="candidatos" class="bg-cream-50 rounded-3xl p-8 shadow-xl border border-cream-200 hover:shadow-2xl transition-shadow relative overflow-hidden group">
+                <div class="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-secondary-100 rounded-full opacity-50 group-hover:scale-150 transition-transform duration-500"></div>
+                    
+                    <div class="relative z-10">
+                        <div class="w-16 h-16 bg-secondary-500 rounded-2xl flex items-center justify-center text-white text-2xl mb-6 shadow-lg">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Para Candidatos</h3>
+                        <p class="text-gray-600 mb-6 h-24">Te conectamos con <strong>oportunidades de desarrollo profesional real</strong> en las mejores empresas del país. Da el siguiente paso en tu carrera.</p>
+                        
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-start gap-3">
+                                <i class="fas fa-shield-alt text-primary-500 mt-1"></i>
+                                <span class="text-gray-700">Nuestros servicios son <strong>100% gratuitos</strong> para el talento. Cero estafas.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fas fa-file-alt text-primary-500 mt-1"></i>
+                                <span class="text-gray-700">Proceso transparente y comunicación continua (Vía ATS).</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fas fa-bolt text-primary-500 mt-1"></i>
+                                <span class="text-gray-700">Formulario de postulación rápido, sin registros interminables.</span>
+                            </li>
+                        </ul>
+                        
+                        <a href="javascript:void(0)" onclick="openTab('candidato')" class="block w-full text-center bg-secondary-50 text-secondary-700 hover:bg-secondary-500 hover:text-white font-semibold py-3 px-6 rounded-xl transition-colors border border-secondary-100 hover:border-transparent">
+                            Optimizar mi Selección <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="nosotros" class="py-20 bg-cream-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+                
+                <!-- Storytelling Image/Graphic -->
+                <div class="w-full lg:w-1/2 relative">
+                    <div class="absolute inset-0 bg-primary-600 rounded-3xl transform rotate-3 scale-105 opacity-10"></div>
+                    <img src="https://placehold.co/800x600/3d3d3d/f4f1ea?text=Equipo+Innovación+y+Talento" alt="Equipo Fundador" class="rounded-3xl shadow-2xl relative z-10 w-full object-cover">
+                    
+                    <!-- Floating badge -->
+                    <div class="absolute -bottom-6 -right-6 bg-cream-100 p-4 rounded-2xl shadow-xl z-20 flex items-center gap-4 border border-cream-200">
+                        <div class="bg-secondary-100 text-secondary-600 p-3 rounded-full text-2xl">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-500 font-medium">Fundada en</p>
+                            <p class="text-xl font-bold text-gray-900">2026</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Storytelling Content -->
+                <div class="w-full lg:w-1/2">
+                    <h4 class="text-primary-600 font-semibold tracking-wider uppercase text-sm mb-2">Nuestra Historia</h4>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Nacimos para hacer las cosas de forma diferente</h2>
+                    
+                    <div class="space-y-4 text-gray-600 text-lg">
+                        <p>
+                            Todo comenzó en 2026, cuando <strong>cuatro estudiantes</strong> apasionados por el potencial humano se unieron con una visión clara: transformar la manera en que las empresas peruanas conectan con el talento.
+                        </p>
+                        <p>
+                            Notamos que el mercado estaba saturado de procesos mecánicos, fríos y poco precisos. Decidimos crear una consultora diferente, una que combine de manera magistral la <strong>psicología organizacional clásica con tecnología de vanguardia</strong>.
+                        </p>
+                        <p>
+                            Hoy, somos el puente que une propósitos. Usamos la tecnología (Sistemas ATS, Inteligencia Analítica) no para reemplazar el toque humano, sino para hacerlo más justo, objetivo y eficiente.
+                        </p>
+                    </div>
+
+                    <div class="mt-8 grid grid-cols-2 gap-4">
+                        <div class="border-l-4 border-primary-500 pl-4">
+                            <h5 class="text-2xl font-bold text-gray-900">100%</h5>
+                            <p class="text-sm text-gray-500">Transparencia</p>
+                        </div>
+                        <div class="border-l-4 border-secondary-500 pl-4">
+                            <h5 class="text-2xl font-bold text-gray-900">+Tech</h5>
+                            <p class="text-sm text-gray-500">Innovación Analítica</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="py-20 bg-cream-200">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-cream-50 rounded-3xl shadow-2xl overflow-hidden border border-cream-200">
+                <div class="grid md:grid-cols-5 h-full">
+                    
+                    <!-- Form Sidebar info -->
+                    <div class="md:col-span-2 bg-primary-900 p-10 text-white flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-2xl font-bold mb-2">Comencemos</h3>
+                            <p class="text-gray-300 text-sm mb-8">Elige si eres empresa o candidato para darte la atención que mereces.</p>
+                            
+                            <div class="space-y-6">
+                                <div class="flex items-center gap-4">
+                                    <i class="fas fa-map-marker-alt text-xl text-secondary-500"></i>
+                                    <span class="text-sm">Lima, Perú</span>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <i class="fas fa-envelope text-xl text-secondary-500"></i>
+                                    <span class="text-sm">contacto@innovacionytalento.com</span>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <i class="fas fa-phone-alt text-xl text-secondary-500"></i>
+                                    <span class="text-sm">+51 999 999 999</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-12">
+                            <p class="text-xs text-gray-400">Conectados con las mejores herramientas:</p>
+                            <div class="flex gap-4 mt-2">
+                                <span class="bg-white/10 px-2 py-1 rounded text-xs">ATS Integrado</span>
+                                <span class="bg-white/10 px-2 py-1 rounded text-xs">Analítica</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- The Forms -->
+                    <div class="md:col-span-3 p-10">
+                        <!-- Custom Tabs -->
+                        <div class="flex border-b border-gray-200 mb-8">
+                            <button onclick="switchTab('empresa')" id="tab-empresa" class="flex-1 py-3 text-center tab-active transition-colors text-sm md:text-base">
+                                <i class="fas fa-building mr-2"></i> Soy Empresa
+                            </button>
+                            <button onclick="switchTab('candidato')" id="tab-candidato" class="flex-1 py-3 text-center tab-inactive transition-colors text-sm md:text-base">
+                                <i class="fas fa-user-tie mr-2"></i> Soy Candidato
+                            </button>
+                        </div>
+
+                        <!-- Form Empresa -->
+                        <form id="form-empresa" class="space-y-5 block" onsubmit="event.preventDefault(); alertMessage('¡Gracias! Un consultor se contactará con su empresa pronto.');">
+                            <h4 class="font-bold text-gray-800 text-lg mb-4">Solicitar Consultoría HR</h4>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="col-span-2 sm:col-span-1">
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Nombre Completo</label>
+                                    <input type="text" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-all" placeholder="Ej. Juan Pérez">
+                                </div>
+                                <div class="col-span-2 sm:col-span-1">
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Empresa</label>
+                                    <input type="text" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-all" placeholder="Nombre de tu empresa">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Correo Corporativo</label>
+                                <input type="email" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-all" placeholder="juan@empresa.com">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">¿Qué perfil o consultoría necesitas?</label>
+                                <textarea rows="3" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-all" placeholder="Danos un breve resumen de tus necesidades..."></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-primary-800 hover:bg-primary-900 text-white font-bold py-3 px-4 rounded-lg transition-colors shadow-md">
+                                Enviar Solicitud
+                            </button>
+                        </form>
+
+                        <!-- Form Candidato -->
+                        <form id="form-candidato" class="space-y-5 hidden" onsubmit="event.preventDefault(); alertMessage('¡Postulación exitosa! Hemos recibido tu CV.');">
+                            <div class="bg-blue-50 border-l-4 border-blue-500 p-3 mb-4 rounded-r">
+                                <p class="text-sm text-blue-700"><i class="fas fa-info-circle mr-1"></i> Servicio 100% gratuito. Solo llena lo básico y sube tu CV.</p>
+                            </div>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="col-span-2 sm:col-span-1">
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Nombre Completo</label>
+                                    <input type="text" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-all" placeholder="Tus nombres y apellidos">
+                                </div>
+                                <div class="col-span-2 sm:col-span-1">
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Teléfono / WhatsApp</label>
+                                    <input type="tel" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-all" placeholder="+51 ...">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Correo Electrónico</label>
+                                <input type="email" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-all" placeholder="tucorreo@ejemplo.com">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Adjuntar CV (PDF)</label>
+                                <div class="border-2 border-dashed border-gray-300 rounded-lg p-4 text-center hover:bg-gray-50 transition-colors cursor-pointer" onclick="document.getElementById('file-upload').click()">
+                                    <i class="fas fa-cloud-upload-alt text-2xl text-gray-400 mb-2"></i>
+                                    <p class="text-sm text-gray-500">Haz clic para subir tu documento</p>
+                                    <input type="file" id="file-upload" class="hidden" accept=".pdf,.doc,.docx" required>
+                                </div>
+                            </div>
+                            <button type="submit" class="w-full bg-secondary-500 hover:bg-secondary-600 text-white font-bold py-3 px-4 rounded-lg transition-colors shadow-md">
+                                Postular Ahora
+                            </button>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Custom Alert Box (To avoid native alert()) -->
+    <div id="custom-alert" class="fixed inset-0 z-[100] flex items-center justify-center bg-black bg-opacity-50 hidden opacity-0 transition-opacity duration-300">
+        <div class="bg-cream-50 rounded-2xl p-6 md:p-8 max-w-sm w-full mx-4 shadow-2xl transform scale-95 transition-transform duration-300 border border-cream-200" id="alert-content">
+            <div class="text-center">
+                <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-check text-2xl text-green-500"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-2">Mensaje Enviado</h3>
+                <p id="alert-text" class="text-gray-600 mb-6">Su mensaje ha sido procesado con éxito.</p>
+                <button onclick="closeAlert()" class="w-full bg-primary-600 text-white font-bold py-2 rounded-lg hover:bg-primary-700 transition-colors">
+                    Aceptar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/51999999999?text=Hola,%20deseo%20más%20información%20sobre%20sus%20servicios" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 w-14 h-14 bg-green-500 text-white rounded-full flex items-center justify-center text-3xl shadow-lg hover:bg-green-600 hover:scale-110 transition-all duration-300 z-50 animate-bounce hover:animate-none">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <footer class="bg-gray-900 text-gray-300 pt-16 pb-8 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="md:col-span-2">
+                    <div class="flex items-center gap-2 mb-4">
+                        <img src="image_3a0c98.jpg" alt="Innovación & Talento Logo" class="h-14 w-auto bg-cream-100 rounded-xl p-2">
+                    </div>
+                    <p class="text-sm text-gray-400 mb-4 max-w-sm">
+                        Consultores S.A.C.<br>
+                        Transformando la gestión humana mediante inteligencia analítica y procesos humanizados.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center hover:bg-secondary-500 hover:text-white transition-colors"><i class="fab fa-linkedin-in text-sm"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center hover:bg-secondary-500 hover:text-white transition-colors"><i class="fab fa-instagram text-sm"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center hover:bg-secondary-500 hover:text-white transition-colors"><i class="fab fa-facebook-f text-sm"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-bold mb-4">Enlaces Rápidos</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#empresas" class="hover:text-secondary-500 transition-colors">Para Empresas</a></li>
+                        <li><a href="#candidatos" class="hover:text-secondary-500 transition-colors">Para Candidatos</a></li>
+                        <li><a href="#nosotros" class="hover:text-secondary-500 transition-colors">Nuestra Historia</a></li>
+                        <li><a href="#contacto" class="hover:text-secondary-500 transition-colors">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-4">Legal</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-start gap-2">
+                            <i class="fas fa-file-invoice mt-1 text-gray-500"></i>
+                            <span>RUC: <strong>20604716595</strong></span>
+                        </li>
+                        <li><a href="#" class="hover:text-secondary-500 transition-colors">Política de Privacidad</a></li>
+                        <li><a href="#" class="hover:text-secondary-500 transition-colors">Términos y Condiciones</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Sticky Navbar effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 10) {
+                navbar.classList.add('shadow-md');
+            } else {
+                navbar.classList.remove('shadow-md');
+            }
+        });
+
+        // Form Tabs Logic
+        function openTab(tabName) {
+            // Scroll to contact section
+            document.getElementById('contacto').scrollIntoView({ behavior: 'smooth' });
+            // Switch tabs
+            switchTab(tabName);
+        }
+
+        function switchTab(tabName) {
+            const formEmpresa = document.getElementById('form-empresa');
+            const formCandidato = document.getElementById('form-candidato');
+            const tabEmpresa = document.getElementById('tab-empresa');
+            const tabCandidato = document.getElementById('tab-candidato');
+
+            if (tabName === 'empresa') {
+                // Show Empresa
+                formEmpresa.classList.remove('hidden');
+                formEmpresa.classList.add('block');
+                formCandidato.classList.remove('block');
+                formCandidato.classList.add('hidden');
+                
+                // Style Tabs
+                tabEmpresa.classList.replace('tab-inactive', 'tab-active');
+                tabCandidato.classList.replace('tab-active', 'tab-inactive');
+            } else {
+                // Show Candidato
+                formCandidato.classList.remove('hidden');
+                formCandidato.classList.add('block');
+                formEmpresa.classList.remove('block');
+                formEmpresa.classList.add('hidden');
+                
+                // Style Tabs
+                tabCandidato.classList.replace('tab-inactive', 'tab-active');
+                tabEmpresa.classList.replace('tab-active', 'tab-inactive');
+            }
+        }
+
+        // Custom Alert Logic (Replacing window.alert)
+        const alertBox = document.getElementById('custom-alert');
+        const alertContent = document.getElementById('alert-content');
+        const alertText = document.getElementById('alert-text');
+
+        function alertMessage(msg) {
+            alertText.innerText = msg;
+            alertBox.classList.remove('hidden');
+            // Small delay for display block to apply before animating opacity
+            setTimeout(() => {
+                alertBox.classList.remove('opacity-0');
+                alertContent.classList.remove('scale-95');
+                alertContent.classList.add('scale-100');
+            }, 10);
+            
+            // Reset forms
+            document.getElementById('form-empresa').reset();
+            document.getElementById('form-candidato').reset();
+        }
+
+        function closeAlert() {
+            alertBox.classList.add('opacity-0');
+            alertContent.classList.remove('scale-100');
+            alertContent.classList.add('scale-95');
+            setTimeout(() => {
+                alertBox.classList.add('hidden');
+            }, 300);
+        }
+        
+        // Simple file upload name display
+        const fileInput = document.getElementById('file-upload');
+        fileInput.addEventListener('change', function(e) {
+            if(e.target.files.length > 0) {
+                const fileName = e.target.files[0].name;
+                const parentDiv = this.parentElement;
+                parentDiv.innerHTML = `
+                    <i class="fas fa-file-pdf text-2xl text-secondary-500 mb-2"></i>
+                    <p class="text-sm font-medium text-gray-800">${fileName}</p>
+                    <p class="text-xs text-gray-500 mt-1">Archivo listo. (Clic para cambiar)</p>
+                    <input type="file" id="file-upload" class="hidden" accept=".pdf,.doc,.docx" required>
+                `;
+                // Reattach listener to new input
+                document.getElementById('file-upload').addEventListener('change', arguments.callee);
+            }
+        });
+    </script>
+</body>
+</html>
